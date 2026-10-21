@@ -1,0 +1,263 @@
+```html
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPIDEY CLASS TOOLS - Superhero Classroom Companion</title>
+    <!-- Google Fonts: Orbitron, Rajdhani & Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Poppins:wght@300;400;600;700&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- CSS File Link -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Spider-Web Canvas Background Animation -->
+    <canvas id="web-canvas"></canvas>
+
+    <!-- Toast Notification Container -->
+    <div id="toast-container" class="toast-container"></div>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="#hero" class="logo">
+                <svg class="spider-logo" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2C11.5 2 11 2.19 10.59 2.59L8.41 4.77C7.31 4.15 6.07 3.82 4.8 3.82C4.36 3.82 4 4.18 4 4.62C4 5.06 4.36 5.42 4.8 5.42C5.83 5.42 6.84 5.68 7.74 6.18L5.17 8.75C4.85 9.07 4.85 9.58 5.17 9.9C5.48 10.21 6 10.21 6.31 9.9L8.38 7.83C8.82 8.35 9.34 8.8 9.9 9.17L7.38 11.69C7.07 12 7.07 12.51 7.38 12.83C7.69 13.14 8.2 13.14 8.51 12.83L10.7 10.64C11.12 10.87 11.55 11 12 11C12.45 11 12.88 10.87 13.3 10.64L15.49 12.83C15.8 13.14 16.31 13.14 16.62 12.83C16.93 12.51 16.93 12 16.62 11.69L14.1 9.17C14.66 8.8 15.18 8.35 15.62 7.83L17.69 9.9C18 10.21 18.52 10.21 18.83 9.9C19.15 9.58 19.15 9.07 18.83 8.75L16.26 6.18C17.16 5.68 18.17 5.42 19.2 5.42C19.64 5.42 20 5.06 20 4.62C20 4.18 19.64 3.82 19.2 3.82C17.93 3.82 16.69 4.15 15.59 4.77L13.41 2.59C13 2.19 12.5 2 12 2ZM12 13C10.34 13 9 14.34 9 16C9 18.25 10.5 20.8 11.53 21.72C11.8 21.96 12.2 21.96 12.47 21.72C13.5 20.8 15 18.25 15 16C15 14.34 13.66 13 12 13Z"/>
+                </svg>
+                <span>SPIDEY <span class="highlight">CLASS</span> TOOLS</span>
+            </a>
+
+            <nav class="nav-links" id="nav-links">
+                <a href="#hero" class="nav-link active"><i class="fa-solid fa-house"></i> Beranda</a>
+                <a href="#digital-clock" class="nav-link"><i class="fa-solid fa-clock"></i> Jam Digital</a>
+                <a href="#notes-section" class="nav-link"><i class="fa-solid fa-note-sticky"></i> Notes</a>
+                <a href="#tools-grid" class="nav-link"><i class="fa-solid fa-toolbox"></i> Tools Lain</a>
+                <a href="#about-section" class="nav-link"><i class="fa-solid fa-spider"></i> Tentang</a>
+            </nav>
+
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- HERO SECTION -->
+        <section id="hero" class="hero-section">
+            <div class="hero-content">
+                <div class="hero-badge"><i class="fa-solid fa-bolt"></i> DASHBOARD SUPERHERO SISWA</div>
+                <h1 class="hero-title">WELCOME TO <br><span class="glow-text-red">SPIDEY CLASS</span> <span class="glow-text-cyan">TOOLS</span></h1>
+                <p class="hero-subtitle">Your Ultimate Classroom Companion</p>
+                <p class="hero-description">
+                    Atur waktu belajar, kelola catatan rahasia kelas, dan selesaikan tugas sekolah dengan kecepatan serta ketepatan ala Spider-Man!
+                </p>
+                <div class="hero-actions">
+                    <a href="#tools-grid" class="btn btn-primary"><i class="fa-solid fa-rocket"></i> Mulai Sekarang</a>
+                    <a href="#notes-section" class="btn btn-secondary"><i class="fa-solid fa-pen-to-square"></i> Buat Catatan</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="spider-avatar-wrapper">
+                    <div class="spider-web-ring"></div>
+                    <div class="hero-spider-icon">
+                        <i class="fa-solid fa-spider"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- DASHBOARD CONTAINER -->
+        <div class="dashboard-container" id="tools-grid">
+
+            <!-- SECTION 1: JAM DIGITAL -->
+            <section id="digital-clock" class="spidey-card clock-card">
+                <div class="card-header">
+                    <div class="card-title">
+                        <i class="fa-solid fa-stopwatch card-icon"></i>
+                        <h2>JAM DIGITAL FUTURISTIK</h2>
+                    </div>
+                    <button id="format-toggle" class="btn-toggle">Format 24H</button>
+                </div>
+                <div class="clock-display">
+                    <div id="time-display" class="neon-time">00:00:00</div>
+                    <div id="period-display" class="time-period">AM</div>
+                    <div id="date-display" class="neon-date">Senin, 1 Januari 2026</div>
+                </div>
+            </section>
+
+            <!-- SECTION 2: SPIDEY NOTES CATATAN -->
+            <section id="notes-section" class="spidey-card notes-card">
+                <div class="card-header">
+                    <div class="card-title">
+                        <i class="fa-solid fa-mask card-icon"></i>
+                        <h2>SPIDEY NOTES CATATAN</h2>
+                    </div>
+                    <span class="badge-tag">Penyimpanan Otomatis</span>
+                </div>
+
+                <div class="notes-wrapper">
+                    <!-- Form Input Catatan -->
+                    <form id="note-form" class="note-form">
+                        <input type="hidden" id="note-id">
+                        <div class="input-group">
+                            <i class="fa-solid fa-heading input-icon"></i>
+                            <input type="text" id="note-title" placeholder="Judul Catatan..." required maxlength="60">
+                        </div>
+                        <div class="input-group">
+                            <textarea id="note-body" rows="4" placeholder="Tulis catatan penting kelas di sini, Web-Head..." required></textarea>
+                        </div>
+                        <div class="form-actions">
+                            <button type="submit" id="save-note-btn" class="btn btn-primary"><i class="fa-solid fa-floppy-disk"></i> Simpan Catatan</button>
+                            <button type="button" id="clear-note-btn" class="btn btn-dark"><i class="fa-solid fa-rotate-right"></i> Bersihkan</button>
+                        </div>
+                    </form>
+
+                    <!-- Filter & Search Notes -->
+                    <div class="notes-filter-bar">
+                        <div class="search-box">
+                            <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                            <input type="text" id="search-notes" placeholder="Cari catatan Web-Head...">
+                        </div>
+                    </div>
+
+                    <!-- List Catatan -->
+                    <div id="notes-container" class="notes-grid">
+                        <!-- Notes items injected by JS -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 3: MINI CALCULATOR -->
+            <section id="calculator-section" class="spidey-card calc-card">
+                <div class="card-header">
+                    <div class="card-title">
+                        <i class="fa-solid fa-calculator card-icon"></i>
+                        <h2>KALKULATOR SPIDEY</h2>
+                    </div>
+                </div>
+                <div class="calculator-body">
+                    <input type="text" id="calc-display" class="calc-display" readonly value="0">
+                    <div class="calc-buttons">
+                        <button class="calc-btn btn-func" onclick="calcClear()">AC</button>
+                        <button class="calc-btn btn-func" onclick="calcDel()"><i class="fa-solid fa-backspace"></i></button>
+                        <button class="calc-btn btn-op" onclick="calcAppend('%')">%</button>
+                        <button class="calc-btn btn-op" onclick="calcAppend('/')">÷</button>
+
+                        <button class="calc-btn" onclick="calcAppend('7')">7</button>
+                        <button class="calc-btn" onclick="calcAppend('8')">8</button>
+                        <button class="calc-btn" onclick="calcAppend('9')">9</button>
+                        <button class="calc-btn btn-op" onclick="calcAppend('*')">×</button>
+
+                        <button class="calc-btn" onclick="calcAppend('4')">4</button>
+                        <button class="calc-btn" onclick="calcAppend('5')">5</button>
+                        <button class="calc-btn" onclick="calcAppend('6')">6</button>
+                        <button class="calc-btn btn-op" onclick="calcAppend('-')">-</button>
+
+                        <button class="calc-btn" onclick="calcAppend('1')">1</button>
+                        <button class="calc-btn" onclick="calcAppend('2')">2</button>
+                        <button class="calc-btn" onclick="calcAppend('3')">3</button>
+                        <button class="calc-btn btn-op" onclick="calcAppend('+')">+</button>
+
+                        <button class="calc-btn" onclick="calcAppend('0')">0</button>
+                        <button class="calc-btn" onclick="calcAppend('.')">.</button>
+                        <button class="calc-btn btn-equal" onclick="calcSolve()">=</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 4: DAFTAR TUGAS (TODO LIST) -->
+            <section id="todo-section" class="spidey-card todo-card">
+                <div class="card-header">
+                    <div class="card-title">
+                        <i class="fa-solid fa-list-check card-icon"></i>
+                        <h2>DAFTAR TUGAS KELAS</h2>
+                    </div>
+                </div>
+                <div class="todo-body">
+                    <form id="todo-form" class="todo-input-group">
+                        <input type="text" id="todo-input" placeholder="Tambah tugas sekolah baru..." required>
+                        <button type="submit" class="btn btn-primary"><i class="fa-solid fa-plus"></i></button>
+                    </form>
+                    <ul id="todo-list" class="todo-list">
+                        <!-- Todo items injected by JS -->
+                    </ul>
+                </div>
+            </section>
+
+            <!-- SECTION 5: STOPWATCH -->
+            <section id="stopwatch-section" class="spidey-card stopwatch-card">
+                <div class="card-header">
+                    <div class="card-title">
+                        <i class="fa-solid fa-hourglass-half card-icon"></i>
+                        <h2>STOPWATCH BELAJAR</h2>
+                    </div>
+                </div>
+                <div class="stopwatch-body">
+                    <div id="sw-display" class="sw-time">00:00.00</div>
+                    <div class="sw-controls">
+                        <button id="sw-start-btn" class="btn btn-primary"><i class="fa-solid fa-play"></i> Start</button>
+                        <button id="sw-pause-btn" class="btn btn-secondary" disabled><i class="fa-solid fa-pause"></i> Pause</button>
+                        <button id="sw-reset-btn" class="btn btn-dark"><i class="fa-solid fa-rotate"></i> Reset</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 6: TIPS BELAJAR SPIDEY -->
+            <section id="tips-section" class="spidey-card tips-card">
+                <div class="card-header">
+                    <div class="card-title">
+                        <i class="fa-solid fa-lightbulb card-icon"></i>
+                        <h2>SPIDEY STUDY TIPS</h2>
+                    </div>
+                </div>
+                <div class="tips-body">
+                    <div class="tip-quote">
+                        <i class="fa-solid fa-quote-left quote-icon"></i>
+                        <p id="spidey-quote">"With great focus comes great grades! Kelola waktumu dengan teknik Pomodoro!"</p>
+                    </div>
+                    <button id="next-tip-btn" class="btn btn-cyan"><i class="fa-solid fa-shuffle"></i> Tip Lainnya</button>
+                </div>
+            </section>
+
+            <!-- SECTION 7: TENTANG (ABOUT) -->
+            <section id="about-section" class="spidey-card about-card">
+                <div class="card-header">
+                    <div class="card-title">
+                        <i class="fa-solid fa-circle-info card-icon"></i>
+                        <h2>TENTANG SPIDEY CLASS TOOLS</h2>
+                    </div>
+                </div>
+                <div class="about-content">
+                    <p>
+                        <strong>SPIDEY CLASS TOOLS</strong> adalah platform pembantu aktivitas belajar di kelas yang dibuat dengan inspirasi keberanian, kecepatan, dan ketangkasan Spider-Man.
+                    </p>
+                    <ul class="about-features-list">
+                        <li><i class="fa-solid fa-check text-cyan"></i> Real-time Jam Digital Presisi Modern.</li>
+                        <li><i class="fa-solid fa-check text-cyan"></i> Notes interaktif dengan penyimpanan otomatis LocalStorage browser.</li>
+                        <li><i class="fa-solid fa-check text-cyan"></i> Fitur pembantu kelas: Kalkulator, Todo List, & Stopwatch.</li>
+                        <li><i class="fa-solid fa-check text-cyan"></i> Tampilan Futuristik dengan Web Spider-Man Canvas.</li>
+                    </ul>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-spider-line"></div>
+        <div class="footer-container">
+            <p class="footer-text">Made for Students, Inspired by Spider-Man <i class="fa-solid fa-spider text-red"></i></p>
+            <p class="footer-copy">&copy; <span id="current-year">2026</span> SPIDEY CLASS TOOLS. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript File Link -->
+    <script src="script.js"></script>
+</body>
+</html>
+```
